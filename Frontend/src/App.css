@@ -1,0 +1,103 @@
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.App h1 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.terrain-input {
+  margin-bottom: 1.5rem;
+}
+
+.terrain-input h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.input-group input {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px;
+}
+
+.input-group button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.input-group button:hover {
+  background-color: #357ABD;
+}
+
+.error {
+  color: red;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.array-display {
+  font-family: monospace;
+  background-color: #f5f5f5;
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.terrain-container {
+  margin: 2rem 0;
+}
+
+.terrain-container h3 {
+  margin-bottom: 1rem;
+  color: #4A90E2;
+}
+
+.terrain-grid {
+  display: inline-block;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.grid-row {
+  display: flex;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+}
+
+.cell.ground {
+  background-color: #333;
+}
+
+.cell.water {
+  background-color: #4A90E2;
+}
+
+.cell.empty {
+  background-color: transparent;
+}
