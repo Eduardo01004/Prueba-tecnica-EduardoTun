@@ -135,36 +135,70 @@ Prueba-tecnica-EduardoTun/
 
 ---
 
-## API Endpoints
+## API Endpoints - Ejemplos con cURL
 
 Base URL: `http://localhost:3001`
 
-### Calculo de Agua
+### Calcular Agua
 
 ```bash
-POST /api/calculate
-Content-Type: application/json
-
-{
-  "heights": [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
-}
-
-# Response
-{
-  "heights": [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1],
-  "totalWater": 6
-}
+curl -X POST http://localhost:3001/api/calculate \
+  -H "Content-Type: application/json" \
+  -d '{"heights": [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]}'
 ```
 
-### Otros Endpoints
+### Topologos
 
-| Metodo | Endpoint | Descripcion |
-|--------|----------|-------------|
-| GET | `/api/topologists` | Lista de topologos |
-| GET | `/api/projects` | Lista de proyectos |
-| GET | `/api/terrains` | Lista de terrenos |
-| POST | `/api/terrains` | Crear terreno |
-| GET | `/api/report` | Estadisticas |
+```bash
+# Obtener todos los topologos
+curl http://localhost:3001/api/topologists
+
+# Obtener topologo por ID
+curl http://localhost:3001/api/topologists/1
+
+# Obtener terrenos de un topologo
+curl http://localhost:3001/api/topologists/1/terrains
+```
+
+### Proyectos
+
+```bash
+# Obtener todos los proyectos
+curl http://localhost:3001/api/projects
+
+# Obtener proyecto por ID
+curl http://localhost:3001/api/projects/1
+
+# Obtener terrenos de un proyecto
+curl http://localhost:3001/api/projects/1/terrains
+```
+
+### Terrenos
+
+```bash
+# Obtener todos los terrenos
+curl http://localhost:3001/api/terrains
+
+# Obtener terreno por ID
+curl http://localhost:3001/api/terrains/1
+
+# Crear nuevo terreno
+curl -X POST http://localhost:3001/api/terrains \
+  -H "Content-Type: application/json" \
+  -d '{
+    "topologistId": 1,
+    "projectId": 1,
+    "heights": [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1],
+    "latitude": 19.4326,
+    "longitude": -99.1332
+  }'
+```
+
+### Reporte de Estadisticas
+
+```bash
+curl http://localhost:3001/api/report
+```
 
 Ver documentacion completa en [Backend/README.md](./Backend/README.md)
 
